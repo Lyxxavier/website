@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #FFD1DC; /* Pastel Pink */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+.main-container {
+    width: 90vw; /* Responsive width */
+    max-width: 800px; /* Limits max size on large screens */
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Images */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 90%;
+}
+
+.gallery img {
+    width: 30%; /* Responsive width */
+    max-width: 180px; /* Limits size */
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Love Note Box */
+.love-note {
+    border: 2px solid #FFB6C1;
+    padding: 15px;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.love-note p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Button Styles */
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #AEC6CF; /* Pastel Blue */
+    color: white;
+    border: 3px dotted white;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+button:hover {
+    background-color: #B3D9FF;
+    transform: scale(1.05);
+    border-color: #FFB6C1;
+}
+
+/* Music Controls */
+#background-music {
+    display: none;
+}
+
+/* 📌 Media Queries for Different Devices */
+
+/* 📌 Laptops & Large Screens */
+@media (min-width: 1024px) {
+    .main-container {
+        max-width: 700px;
+    }
+}
+
+/* 📌 Tablets (iPad 10th Gen, Infinix Note 30) */
+@media (max-width: 768px) {
+    .main-container {
+        width: 95vw;
+    }
+
+    .gallery img {
+        width: 40%;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+
+/* 📌 Phones (iPhone 15 Pro Max, Small Screens) */
+@media (max-width: 480px) {
+    .main-container {
+        width: 90vw;
+        padding: 15px;
+    }
+
+    .gallery img {
+        width: 80%;
+        max-width: 150px;
+    }
+
+    .love-note {
+        max-width: 90%;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

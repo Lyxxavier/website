@@ -1,0 +1,153 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #FFD1DC; /* Pastel Pink */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+.main-container {
+    width: 90vw; /* Responsive width */
+    max-width: 900px; /* Limits max size on large screens */
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Images - Horizontal Line */
+.gallery {
+    display: flex;
+    justify-content: center; /* Centers images */
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap;
+    padding-bottom: 10px;
+    max-width: 100%;
+}
+
+/* Ensuring images are fully visible */
+.gallery img {
+    width: auto; /* Adjust width dynamically */
+    height: 180px; /* Fixed height to keep them aligned */
+    object-fit: contain; /* Shows the full image */
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Love Note Box */
+.love-note {
+    border: 2px solid #FFB6C1;
+    padding: 15px;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin: 30px auto; /* Centers the box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.love-note p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+/* Button Styles */
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #AEC6CF; /* Pastel Blue */
+    color: white;
+    border: 3px dotted white;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+button:hover {
+    background-color: #B3D9FF;
+    transform: scale(1.05);
+    border-color: #FFB6C1;
+}
+/* Floating Hearts & Flowers */
+.floating-particle {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    animation: floatUp ease-in infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+
+/* 📌 Media Queries for Different Devices */
+
+/* 📌 Tablets (iPad 10th Gen, Infinix Note 30) */
+@media (max-width: 768px) {
+    .gallery img {
+        height: 160px;
+    }
+
+    .love-note {
+        max-width: 90%;
+    }
+}
+
+/* 📌 Phones (iPhone 15 Pro Max, Small Screens) */
+@media (max-width: 480px) {
+    .main-container {
+        width: 95vw;
+        padding: 15px;
+    }
+
+    .gallery {
+        overflow-x: auto;
+    }
+
+    .gallery img {
+        height: 140px;
+    }
+
+    .love-note {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

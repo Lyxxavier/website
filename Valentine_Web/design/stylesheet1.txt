@@ -1,0 +1,83 @@
+/* 🌸 General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #FFD1DC; /* Pastel Pink */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* ❤️ Main Title */
+h2 {
+    font-size: 5vw; /* Adjusts to screen width */
+    color: #D63384;
+    margin-bottom: 20px;
+}
+
+/* 📸 Responsive GIF */
+.gif-container {
+    width: 50vw;
+    max-width: 500px;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 🎵 Responsive Music Player */
+audio {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 20%;
+    min-width: 100px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+/* 🌸 Message Styling */
+.text-box {
+    max-width: 80%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 2vw;
+    margin-top: 15px;
+}
+
+/* 💕 Button Styling */
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 2vw 4vw; /* Scales dynamically */
+    font-size: 2.5vw;
+    cursor: pointer;
+    background-color: #AEC6CF; /* Pastel Blue */
+    color: white;
+    border: 3px dotted white;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #B3D9FF;
+    transform: scale(1.1);
+    border-color: #FFB6C1;
+}

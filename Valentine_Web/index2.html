@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Love for You! 💕</title>
+    <link rel="stylesheet" href="design/stylesheet2.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <h2>More Love Just for You! 💖</h2>
+        <p>Here are some special moments natin together! 🌸</p>
+
+        <!-- Gallery (Images Stay in a Row) -->
+        <div class="gallery">
+            <img src="images/image1.jpg" alt="Picture 1">
+            <img src="images/image2.jpg" alt="Picture 2">
+            <img src="images/image3.jpg" alt="Picture 3">
+            <img src="images/image4.jpg" alt="Picture 4">
+            <img src="images/image5.jpg" alt="Picture 5">
+        </div>
+
+        <!-- Centered Love Note Box -->
+        <div class="love-note">
+            <p>
+                Hey baby siguro nahuhulaan mo na ginagawa ko by now hehe. Eto ako, nagcocode ng mini-gift since I can't do art stuff like you. Eto na ang pinaka-best na kaya ko!! 3 months in and all I can say is na masaya ako with you, at sana sa future mas lalo pa. Mas lumigaya ako noong naging legal tayo sa magulang ng isa't-isa. Mahal kita, Icah, at wala nang iba pa. I miss you see you soon !🌸
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button onclick="window.location.href='index.html';">
+                Back to Main Page 💕
+            </button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="music/nakauwi_na.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById("background-music");
+
+            audio.play().catch(() => {
+                document.addEventListener("click", function() {
+                    audio.play();
+                }, { once: true }); 
+            });
+        });
+    </script>
+
+<!-- Floating Hearts & Flowers -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const numParticles = 20; // Adjust for performance
+    const container = document.body;
+
+    for (let i = 0; i < numParticles; i++) {
+        createParticle();
+    }
+
+    function createParticle() {
+        const particle = document.createElement("div");
+        particle.classList.add("floating-particle");
+
+        // Randomly select heart or flower emoji
+        const symbols = ["💖", "🌸"];
+        particle.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+
+        // Random position at the bottom
+        particle.style.left = Math.random() * 100 + "vw";
+        particle.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3-6 seconds
+        particle.style.opacity = Math.random(); // Random opacity for effect
+
+        container.appendChild(particle);
+
+        // Remove when animation ends (performance optimization)
+        setTimeout(() => {
+            particle.remove();
+            createParticle(); // Spawn new one to keep animation continuous
+        }, parseFloat(particle.style.animationDuration) * 1000);
+    }
+});
+</script>
+
+</bodfy>
+</body>
+</html>

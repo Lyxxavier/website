@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button</title>
+    <link rel="stylesheet" href="design/stylesheet1.css"> 
+</head>
+
+<style>
+    .heart {
+            position: fixed;
+            color: red;
+            font-size: 20px;
+            animation: floatUp 3s linear infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh);
+            }
+        }
+</style>
+
+<body>
+
+    <h2>Happy Valentine's Day Baby! 💖</h2>
+
+    <!-- GIF with rounded border -->
+    <div class="gif-container">
+        <img src="images/chiikawa_dancing.gif" alt="Chiikawa Dancing">
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container">
+        <button onclick="window.location.href='https://open.spotify.com/playlist/7qeqiQbHcSYKjfhwVaQ366?si=gp_tTcKtS0G1SBDhZOhoOA';">
+            Listen to this Playlist 🎶
+        </button>
+
+        <button onclick="window.location.href='index2.html';" style="background-color: #FF69B4;">
+            Click Me for More 💕
+        </button>
+    </div>
+
+<audio id="background-music" loop>
+    <source src="music/chiikawa_sound.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const audio = document.getElementById("background-music");
+
+        audio.play().catch(() => {
+          
+            document.addEventListener("click", function() {
+                audio.play();
+            }, { once: true }); 
+        });
+    });
+ </script>
+
+ <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = "100vh";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+        
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
