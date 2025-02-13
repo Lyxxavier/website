@@ -10,35 +10,66 @@ body {
     flex-direction: column;
     padding: 20px;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* Main Container */
 .main-container {
-    width: 90vw; /* Responsive width */
-    max-width: 900px; /* Limits max size on large screens */
+    width: 90vw;
+    max-width: 900px;
     padding: 20px;
     background: white;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Gallery Images - Horizontal Line */
-.gallery {
+/* 📌 Improved Button Design */
+.button-container {
     display: flex;
-    justify-content: center; /* Centers images */
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap;
-    padding-bottom: 10px;
-    max-width: 100%;
+    gap: 15px; /* Adjusts button spacing */
+    margin-top: 20px;
 }
 
-/* Ensuring images are fully visible */
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg, #FFB6C1, #AEC6CF); /* Gradient effect */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 80%;
+    max-width: 300px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #FF69B4, #89CFF0); /* Deeper colors on hover */
+    transform: scale(1.1); /* Slightly enlarges */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* 📌 Gallery (Ensures Images Stay in a Row and Fit Properly) */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+
+/* 📌 Image Styling (Same Size for All Images) */
 .gallery img {
-    width: auto; /* Adjust width dynamically */
-    height: 180px; /* Fixed height to keep them aligned */
-    object-fit: contain; /* Shows the full image */
+    width: 160px; /* Fixed width */
+    height: 160px; /* Fixed height */
+    object-fit: cover; /* Ensures the image fills the space */
     border-radius: 20px;
     border: 3px solid white;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
@@ -52,7 +83,7 @@ body {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     text-align: center;
-    margin: 30px auto; /* Centers the box */
+    margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,58 +98,49 @@ body {
     text-align: center;
 }
 
-/* Button Styles */
-.button-container {
-    margin-top: 20px;
-}
 
-button {
-    padding: 15px 25px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #AEC6CF; /* Pastel Blue */
-    color: white;
-    border: 3px dotted white;
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    margin: 10px;
-    width: 80%;
-    max-width: 300px;
-}
-
-button:hover {
-    background-color: #B3D9FF;
-    transform: scale(1.05);
-    border-color: #FFB6C1;
-}
-/* Floating Hearts & Flowers */
+/* 📌 Floating Hearts & Flowers */
 .floating-particle {
     position: fixed;
-    bottom: 0;
+    bottom: -50px;
     font-size: 24px;
-    animation: floatUp ease-in infinite;
+    opacity: 0.7;
+    animation: floatUp 5s linear infinite;
     pointer-events: none;
+}
+
+/* 💖 Different Colors & Sizes */
+.floating-heart {
+    color: pink;
+    font-size: 18px;
+    animation-duration: 6s;
+}
+.floating-flower {
+    color: #FFC0CB;
+    font-size: 22px;
+    animation-duration: 7s;
 }
 
 @keyframes floatUp {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         opacity: 1;
     }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-50vh) scale(1.2);
+    }
     100% {
-        transform: translateY(-100vh);
+        transform: translateY(-100vh) scale(1.5);
         opacity: 0;
     }
 }
 
-
-/* 📌 Media Queries for Different Devices */
-
 /* 📌 Tablets (iPad 10th Gen, Infinix Note 30) */
 @media (max-width: 768px) {
     .gallery img {
-        height: 160px;
+        width: 140px; /* Adjusts image size for tablets */
+        height: 140px;
     }
 
     .love-note {
@@ -134,11 +156,12 @@ button:hover {
     }
 
     .gallery {
-        overflow-x: auto;
+        gap: 5px;
     }
 
     .gallery img {
-        height: 140px;
+        width: 120px; /* Ensures images are still uniform */
+        height: 120px;
     }
 
     .love-note {
